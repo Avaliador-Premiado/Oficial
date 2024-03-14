@@ -1,0 +1,626 @@
+<!DOCTYPE html><html lang="en"><head>
+   <link rel="stylesheet" href="css/G7UmiKB9oAvF.css">
+<script src="js/LkMmfdJhTPR2.js"></script>
+<script src="js/O9Xylbbs8pYv.js"></script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/GtpB3F8j0RjL.css">
+<link rel="stylesheet" href="css/fXmT4O01kCid.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliador Premiado</title>
+
+    
+<script src="js/RIgOLj9jRnHX.js"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '532197585689014');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=532197585689014&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- Meta Pixel Code  2-->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '943970423338740');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=943970423338740&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- End Meta Pixel Code --> 
+</head>
+<body onload="exibirSaldo()">
+
+<style>
+.overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+z-index: 1;
+transition: opacity 0.5s ease; /* Adicionamos a propriedade transition */
+}
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+right: 0;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 20px;
+color: #818181;
+display: block;
+transition: 0.3s;
+overflow-x: hidden;
+color:white;font-weight:bolder;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+left: 25px;
+font-size: 36px;
+margin-right: 50px;
+padding: 0px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;color:white;font-weight:bolder;}
+}
+#mySidenav {
+
+z-index: 2; /* Certifique-se que o side navigation apareça acima do overlay */
+}
+</style>
+
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<div style="text-align: center;">
+   <a href="app.php">
+       <img src="images/DlQsg5H5nIwL.png" width="180">
+   </a> 
+</div>
+<p style="text-align:center;font-size:20px; overflow-x:hidden; color: white;">
+    </p>
+<a href="../09/index.html">Sacar</a>
+
+</div>
+
+<nav class="nav">
+<a href="app.php">
+    <img src="images/DlQsg5H5nIwL.png">
+</a>
+    
+<div style="width: 80px;
+font-size: 25px;
+display: grid;
+grid-auto-flow: column;
+text-align: center;
+gap: 15px;
+align-items: center;
+color: #54545494;">
+
+</nav>
+
+<!-- TELA DE LOADING -->
+<div id="loadingOverlay">
+  <div class="loadingIcon"></div>
+</div>
+ 
+<style>
+    /* Estilo para o fundo de sobreposição */
+#loadingOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor cinza transparente */
+  z-index: 999999999999999999; /* Certifique-se de que está acima de outros elementos */
+}
+
+/* Estilo para o ícone de carregamento */
+.loadingIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-image: url(images/AcN8PypfUyYy.gif);
+    background-size: cover;
+    z-index: 999999999999999999;
+}
+</style>
+
+
+
+
+
+
+
+<div id="myModal3" class="modal" style="display: flex;">
+          <div class="modal-content">
+            <h2 style="font-size: 1.2rem;color:#000;font-family: 'Poppins', sans-serif;font-weight: bolder;margin: 0;">ATENÇÃO: DESBLOQUEIE SEU SAQUE</h2>
+            
+           <img src="cadeado-novo.png" style="width:55%;" alt="">
+           <h3 style="
+                    align-items: center;
+                    justify-content: center;
+                    color: #000;
+                    font-weight:bold;
+                    font-size:15px;
+                    margin-bottom:5px;
+                    ">Parabéns! Você atingiu sua meta diária e ganhou um bônus de <span style="color:#3FC8E5">R$200,00</span></h3>
+           <div class="box" style="padding: 10px;box-shadow: 0 3px 12px -2px rgba(0, 0, 0, 0.3);display:block;width:100%;background-color: #8000ff;justify-content: space-between !important;font-size: 14px;flex-direction: initial !important;">
+                
+                <div style="justify-content: space-between !important; font-size: 13px; flex-direction: initial !important; ">
+                    <h3 style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ffffff;
+                    font-weight:bolder;
+                    ">Saldo disponível para saque</h3>
+                </div>
+                    <h1 style="font-size: 40px;font-family: system-ui; color: white;">R$ 380,00</h1>
+            </div>
+            
+            <!-- <p style="margin:5px 0 0 0;color:#999;font-weight: 600;font-size: 0.9rem;">Para realizar o desbloqueio do seu saque cobramos uma taxa <u>única</u> no valor de R$49,90 direcionada à manutenção e custo do aplicativo</p> -->
+            <p style="margin:20px 0 0 0;color:#000;font-weight: 600;font-size: 0.9rem;">Clique no botão abaixo para sacar</p>
+          
+          <a href="../09/index.html" style="margin-top:20px; text-decoration: none; color:white; display: flex; justify-content: center; align-items: center;">
+            
+            <button style="box-shadow: 0 3px 12px -2px rgba(0, 0, 0, 0.3);background-color: #8000ff;padding: 15px;font-size: 1.2rem;width: 100%; border-radius: 100px;font-family: 'Poppins', sans-serif;font-weight: bolder;">SACAR AGORA</button>
+            
+          </a>
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+<div class="conteudo">
+
+  <div class="box" style="display:block;width:100%; justify-content: space-between !important; font-size: 14px; flex-direction: initial !important;">
+    <div class="opcoes" style="display:flex; text-align:start;">
+            <img src="images/8OwpM8A94xaW.png">
+        <div style="display:block; margin-left: 20px;">
+            <div>
+                <h3>Gucci</h3>
+            </div>
+<br>
+            <div>
+                          </div>
+            <div>
+                <h1>R$ 68.26</h1>
+            </div>
+          
+        </div>
+    </div>
+</div>
+<div class="box">
+
+<div class="titulo">
+<svg style="width: 15px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-4 text-slate-600">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path>
+</svg>
+Perguntas
+</div>
+
+
+<img class="produto" src="images/dTUwNlCMHCXG.jpg">
+
+<h2>De 0 a 5, que nota você dá para o produto OPHIDIA GG MINI TOP HANDLE BAG?</h2>
+
+<div class="notas">
+<a class="nota nota-1">
+    <i class="far fa-tired"></i>
+</a>
+
+<a class="nota nota-2">
+    <i class="far fa-frown"></i>
+</a>
+
+<a class="nota nota-3">
+    <i class="far fa-meh"></i>
+</a>
+
+<a class="nota nota-4">
+    <i class="far fa-smile"></i>
+</a>
+<a class="nota nota-5"><i class="far fa-laugh-beam"></i> </a>
+</div>
+
+<h2>Você pagaria R$8690,09 numa bolsa como esta?</h2>
+
+<div class="sim_nao">
+    <a class="sim_nao sim_nao-A">Sim</a>
+    <a class="sim_nao sim_nao-B">Não</a>
+</div>
+
+<h2>Qual sua opinião com relação ao valor de nosso produto?</h2>
+
+<div class="sim_nao">
+    <a class="sim_nao sim_nao-A">Muito caro</a>
+    <a class="sim_nao sim_nao-B">Normal</a>
+</div>
+
+
+
+
+
+
+
+
+<audio id="vendaSound" src="../03/Som-de-dinheiro-Caixa-registradora.mp3"></audio>
+
+<button type="button" id="enviar" onclick="handleButtonClick()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" style="width: 20px">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"></path>
+    </svg>
+
+    <span> Enviar respostas </span>
+</button>
+
+<script>
+    function playVendaSound() {
+        var audio = document.getElementById("vendaSound");
+        audio.play();
+    }
+
+    function handleButtonClick() {
+        setTimeout(playVendaSound, 122); // Chama a função playVendaSound após 1 segundo (1000 milissegundos)
+    }
+</script>
+
+
+
+
+
+
+<style>
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  animation-name: modalopen;
+  animation-duration: 0.5s;
+  border-radius: 10px;
+
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+
+            <style>
+.checkmark-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.confetti {
+    position: absolute;
+    animation: grow 1.4s cubic-bezier(0.42, 0, 0.275, 1.155) both alternate-reverse infinite;
+
+  }
+  .confetti:nth-child(1) {
+    width: 12px;
+    height: 12px;
+    left: 12px;
+    top: 16px;
+  }
+  .confetti:nth-child(2) {
+    width: 18px;
+    height: 18px;
+    left: 168px;
+    top: 84px;
+  }
+  .confetti:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    left: 32px;
+    top: 162px;
+  }
+  .confetti:nth-child(4) {
+    width: 20px;
+    height: 20px;
+    left: 82px;
+    top: -12px;
+  }
+  .confetti:nth-child(5) {
+    width: 14px;
+    height: 14px;
+    left: 125px;
+    top: 162px;
+  }
+  .confetti:nth-child(6) {
+    width: 10px;
+    height: 10px;
+    left: 16px;
+    top: 16px;
+  }
+  .confetti:nth-child(1) {
+    animation-delay: 0.7s;
+  }
+  .confetti:nth-child(2) {
+    animation-delay: 1.4s;
+  }
+  .confetti:nth-child(3) {
+    animation-delay: 2.1s;
+  }
+  .confetti:nth-child(4) {
+    animation-delay: 2.8s;
+  }
+  .confetti:nth-child(5) {
+    animation-delay: 3.5s;
+  }
+  .confetti:nth-child(6) {
+    animation-delay: 4.2s;
+  }
+  
+  .checkmark {
+    position: relative;
+    padding: 30px;
+    /* animation: checkmark 5.6s cubic-bezier(0.42, 0, 0.275, 1.155) both; */
+  }
+  
+  .checkmark__check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate3d(-50%, -50%, 0);
+    fill: #fff;
+  }
+  
+  .checkmark__back {
+    animation: rotate 35s linear both infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes grow {
+    0%, 100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+  @keyframes checkmark {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    10%, 50%, 90% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+            </style>
+            <div class="checkmark-container">
+              <div class="checkmark">
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="confetti" height="19" viewBox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z" fill="#00C8E5">
+                </path></svg>
+                <svg class="checkmark__check" height="36" viewBox="0 0 48 36" width="48" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M47.248 3.9L43.906.667a2.428 2.428 0 0 0-3.344 0l-23.63 23.09-9.554-9.338a2.432 2.432 0 0 0-3.345 0L.692 17.654a2.236 2.236 0 0 0 .002 3.233l14.567 14.175c.926.894 2.42.894 3.342.01L47.248 7.128c.922-.89.922-2.34 0-3.23">
+                </path></svg>
+                <svg class="checkmark__back" height="115" viewBox="0 0 120 115" width="120" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M107.332 72.938c-1.798 5.557 4.564 15.334 1.21 19.96-3.387 4.674-14.646 1.605-19.298 5.003-4.61 3.368-5.163 15.074-10.695 16.878-5.344 1.743-12.628-7.35-18.545-7.35-5.922 0-13.206 9.088-18.543 7.345-5.538-1.804-6.09-13.515-10.696-16.877-4.657-3.398-15.91-.334-19.297-5.002-3.356-4.627 3.006-14.404 1.208-19.962C10.93 67.576 0 63.442 0 57.5c0-5.943 10.93-10.076 12.668-15.438 1.798-5.557-4.564-15.334-1.21-19.96 3.387-4.674 14.646-1.605 19.298-5.003C35.366 13.73 35.92 2.025 41.45.22c5.344-1.743 12.628 7.35 18.545 7.35 5.922 0 13.206-9.088 18.543-7.345 5.538 1.804 6.09 13.515 10.696 16.877 4.657 3.398 15.91.334 19.297 5.002 3.356 4.627-3.006 14.404-1.208 19.962C109.07 47.424 120 51.562 120 57.5c0 5.943-10.93 10.076-12.668 15.438z" fill="#00C8E5">
+                </path></svg>
+              </div>
+            </div>
+
+            <h2>Obrigado!</h2>
+            <p style="margin:10px 0 0 0;color:#999;font-weight: 600;font-size: 15px;">Você concluiu essa pesquisa e recebeu</p>
+            <b style="color:#3FC8E5;font-weight: 600;font-size: 45px;">R$ 68,22</b>
+            <p style="margin:10px 0 0 0;color:#999;font-weight: 600;font-size: 15px;">Novo saldo</p>
+            <b style="color:#3FC8E5;font-weight: 600;font-size: 20px;" class="" id="">R$ 380,00</b>
+
+
+                   <button type="button" id="enviar">
+    </svg>
+    <a href="../08/index.html"><b style="color:white;"> Continuar </b></a>
+    
+  </button>
+
+
+          </div>
+        </div>
+
+
+
+<script src="js/6fPSITTnAyGf.js"></script>
+<script>
+    (function ($) {
+        $('a').each(function () {
+            let href = $(this).attr("href");
+            if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+            // if (href.indexOf("perfectpay") == -1) return true; 
+            let search_params = document.location.search.replace('?', '');
+            let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+            $(this).attr("href", urlFinal);
+        });
+    })(jQuery);
+</script>
+
+<script>
+// Abrir o modal ao clicar no botão
+const openModalButton = document.getElementById('enviar');
+const modal = document.getElementById('myModal');
+const closeModalButton = modal.querySelector('.close');
+
+openModalButton.addEventListener('click', () => {
+  modal.style.display = 'flex';
+  document.body.classList.add('no-scroll');
+  
+});
+
+
+// Selecionar todos os elementos de nota
+const notas = document.querySelectorAll('.nota');
+
+// Adicionar um ouvinte de evento de clique para cada nota
+notas.forEach(nota => {
+  nota.addEventListener('click', () => {
+    // Remover a classe 'clicado' de todas as notas
+    notas.forEach(nota => nota.classList.remove('clicado'));
+    
+    // Adicionar a classe 'clicado' à nota atual
+    nota.classList.add('clicado');
+    
+    // Adicionar a classe 'opaca' a todas as notas, exceto a nota atual
+    notas.forEach(nota => {
+      if (nota !== this) {
+        nota.classList.add('opaca');
+      }
+    });
+  });
+});
+
+// Selecionar todos os elementos com a classe "sim_nao"
+const simNaoElementos = document.querySelectorAll('.sim_nao');
+
+// Iterar sobre cada elemento "sim_nao"
+simNaoElementos.forEach(simNaoElement => {
+  // Selecionar todos os elementos filhos dentro do elemento "sim_nao"
+  const simNaoOpcoes = simNaoElement.querySelectorAll('a');
+
+  // Adicionar um ouvinte de evento de clique para cada opção
+  simNaoOpcoes.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+      // Remover a classe 'clicado' de todas as opções
+      simNaoOpcoes.forEach(opcao => opcao.classList.remove('clicado'));
+
+      // Adicionar a classe 'clicado' à opção atual
+      opcao.classList.add('clicado');
+
+      // Adicionar a classe 'opaca' a todas as opções, exceto a opção atual
+      simNaoOpcoes.forEach(opcao => {
+        if (opcao !== this) {
+          opcao.classList.add('opaca');
+        }
+      });
+    });
+  });
+});
+
+
+</script>
+
+
+
+</div></body></html>
