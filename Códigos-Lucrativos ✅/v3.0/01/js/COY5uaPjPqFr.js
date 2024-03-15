@@ -1,3 +1,21 @@
+// Função para reproduzir o som de venda
+function playSaleSound() {
+    setTimeout(function() {
+        const audio = new Audio('Som-de-dinheiro-Caixa-registradora.mp3');
+        audio.play();
+    }, 44); // Intervalo de 1 segundo (1000 milissegundos)
+}
+
+
+
+
+
+
+
+
+
+
+
 const p1Div = document.getElementById('p1');
 const p2Div = document.getElementById('p2');
 const p3Div = document.getElementById('p3');
@@ -11,7 +29,7 @@ function mostrarPagina(pagina) {
     p4Div.style.display = pagina === 'p4' ? 'block' : 'none';
 }
 
-let valor = 0.00;
+let valor = 207.00;
 const valorSpan = document.getElementById('valor');
 
 function atualizarValor() {
@@ -49,10 +67,11 @@ function showLoadingB1() {
     var button = document.getElementById("B1");
     aumentarValor();
     showPopupB1();
+    playSaleSound(); // Adicione esta linha para reproduzir o som
     setTimeout(function() {
         closePopupB1();
-        mostrarPagina('p2')
-    }, 4000)
+        mostrarPagina('p2');
+    }, 3333);
 }
 /* DIV 1 */
 
@@ -70,10 +89,11 @@ function showLoadingB2() {
     var button = document.getElementById("B2");
     aumentarValor();
     showPopupB2();
+    playSaleSound(); // Adicione esta linha para reproduzir o som
     setTimeout(function() {
         closePopupB2();
-        mostrarPagina('p3')
-    }, 4000)
+        mostrarPagina('p3');
+    }, 3333);
 }
 /* DIV 2 */
 
@@ -87,39 +107,23 @@ function closePopupB3() {
     document.getElementById('popupB3').style.display = 'none'
 }
 
-function showLoadingB3() {
+function showLoadingB3(utm) {
+    var utm = utm;
     var button = document.getElementById("B3");
     aumentarValor();
     showPopupB3();
+    playSaleSound(); // Adicione esta linha para reproduzir o som
+
     setTimeout(function() {
-        closePopupB3();
-        mostrarPagina('p4')
-    }, 4000)
-
-}
-/* DIV 3 */
-
-
-/* DIV 4 */
-function showPopupB4() {
-    document.getElementById('popupB4').style.display = 'block'
+        redirectToVsl(utm);
+    }, 3333);
 }
 
-function redirectToSaque(utm) {
-    window.location.href = "../02/index.html"+utm;
+function redirectToVsl(utm) {
+    window.location.href = "../02/index.html";
 }
 
-function showLoadingB4(utm) {
-    var utm = utm;
-    var button = document.getElementById("B4");
-    aumentarValor();
-    showPopupB4();
-    setTimeout(function() {
-        redirectToSaque(utm);
-    }, 4000)
 
-}
-/* DIV 4 */
 
 
 
