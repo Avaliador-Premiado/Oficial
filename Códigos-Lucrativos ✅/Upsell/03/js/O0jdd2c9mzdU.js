@@ -3,7 +3,7 @@ function playSaleSound() {
     setTimeout(function() {
         const audio = new Audio('Som-de-dinheiro-Caixa-registradora.mp3');
         audio.play();
-    }, 44); // Intervalo de 1 segundo (1000 milissegundos)
+    }, 9); // Intervalo de 1 segundo (1000 milissegundos)
 }
 
 const p1Div = document.getElementById('p1');
