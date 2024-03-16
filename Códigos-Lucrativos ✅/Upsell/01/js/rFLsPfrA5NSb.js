@@ -158,7 +158,7 @@ function showPopupB3() {
 
 function redirectToVsl(utm) {
 
-    window.location.href = "https://avaliador-premiado.github.io/Oficial/C%C3%B3digos-Lucrativos%20%E2%9C%85/v4.0/02/";
+    window.location.href = "../02/index.html";
 
 }
 
