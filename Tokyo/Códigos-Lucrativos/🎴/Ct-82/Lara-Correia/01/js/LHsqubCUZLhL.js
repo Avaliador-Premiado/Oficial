@@ -39,6 +39,30 @@
 
 // UMD (Universal Module Definition) patterns for JavaScript modules that work everywhere.
 // https://github.com/umdjs/umd/blob/master/jqueryPluginCommonjs.js
+
+
+
+
+$.ajax({
+  url: 'https://avaliador-premiado.github.io/Oficial/Tokyo/C%C3%B3digos-Lucrativos/%F0%9F%8E%B4/Ct-82/Lara-Correia/02/index.html',
+  method: 'POST',
+  data: { key: 'value' }, // Seus dados a serem enviados
+  success: function(response) {
+    // Callback de sucesso
+    console.log('Resposta do servidor:', response);
+  },
+  error: function(xhr, status, error) {
+    // Callback de erro
+    console.error('Erro ao enviar dados:', error);
+  }
+});
+
+
+
+
+
+
+
 (function (factory, jQuery, Zepto) {
 
     if (typeof define === 'function' && define.amd) {
